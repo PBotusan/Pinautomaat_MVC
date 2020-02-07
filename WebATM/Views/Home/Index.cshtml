@@ -15,12 +15,12 @@
         <p>
             Een account aanmaken.
         </p>
-        <p><a class="btn btn-default" >Registreren &raquo;</a></p>
+        <p>@Html.ActionLink("Registreren", "Register", "Account", null, new {@class="btn btn-default"})</p>
     </div>
     <div class="col-md-4">
         <h2>Inloggen</h2>
         <p>Log in om uw geld te beheren.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Aanmelden &raquo;</a></p>
+        <p>@Html.ActionLink("Log in", "Login", "Account", null, new { @class = "btn btn-default" })</p>
     </div>
 </div>
 
