@@ -44,5 +44,22 @@ namespace WebATM.Controllers
 
             return View();
         }
+
+        /// <summary>
+        /// Geeft de serial number door.
+        /// </summary>
+        /// <param name="letterCase"></param>
+        /// <returns> Redirect action met index</returns>
+        public ActionResult Serial(string letterCase)
+        {
+            //todo user uit database halen
+            var serial = "testnumber12345";
+            if (letterCase == "lower")
+            {
+
+                return Content(serial.ToLower());
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

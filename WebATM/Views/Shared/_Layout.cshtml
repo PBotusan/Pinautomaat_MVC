@@ -33,7 +33,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Rabobank pinautomaat</p>
+            <p>&copy; @DateTime.Now.Year - Rabobank pinautomaat - @Html.Action("Serial", "Home", new { letterCase = "lower"})</p>
         </footer>
     </div>
 
