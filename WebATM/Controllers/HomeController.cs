@@ -8,6 +8,7 @@ namespace WebATM.Controllers
 {
     public class HomeController : Controller
     {
+        //[MyLoggingFilter]
         public ActionResult Index()
         {
             return View();
@@ -15,14 +16,31 @@ namespace WebATM.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Heeft u problemen ? Stuur ons een bericht";
 
             return View();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns> De contact view</returns>
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.TheMessage = "Heeft u problemen ? Stuur ons een bericht";
+
+            return View();
+        }
+
+        /// <summary>
+        /// Contactpage geeft parameter mee van het bericht. wordt actief wanneer je submit drukt.
+        /// </summary>
+        /// <returns> De contact view</returns>
+        [HttpPost]
+        public ActionResult Contact(string bericht)
+        {
+           
+            ViewBag.TheMessage = "Bedankt, we hebben uw bericht ontvangen";
 
             return View();
         }

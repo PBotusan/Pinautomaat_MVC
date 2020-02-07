@@ -29,3 +29,30 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+U gebruikt @Request.Browser.Browser.
+
+@{ var lijstMetBedragen = new List<Decimal> { 100, 200, -40, 275.99m, 25.50m };
+}
+
+<ul>
+    <!--foreach van alle bedragen in een bedragenlijst-->>
+    @foreach (decimal bedrag in lijstMetBedragen)
+    {
+        <li>
+            @formatAmount(bedrag)
+        </li>
+    }
+</ul>
+
+    @helper formatAmount(decimal hoeveelheid)
+    {
+        // laat zien of mensen of ze in credit of debit staan.
+        var color = "green";
+        if (hoeveelheid < 0)
+    {
+        color = "red";
+    }
+    <span style="color:@color">@String.Format("{0:c}", hoeveelheid)</span>
+
+}
