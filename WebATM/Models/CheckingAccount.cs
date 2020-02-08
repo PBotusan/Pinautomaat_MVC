@@ -23,16 +23,18 @@ namespace WebATM.Models
         /// Nummer van account
         /// </summary>
         [Required]
-        [StringLength(16)]
-        [Display(Name = "Account #")]
+        [RegularExpression(@"\d{6,10}", ErrorMessage = "Accountnummer kan alleen tussen 6 en 10 cijfers bevatten.")]
+        [Column(TypeName ="varchar")]
+        [Display(Name = "Account:")]
         public string AccountNummer { get; set; }
 
 
         /// <summary>
-        /// Naam van user-account
+        /// Naam van CheckAccount
         /// </summary>
         [Required]
         [StringLength(32)]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Alleen characters zijn toegestaan")]
         public string Voornaam { get; set; }
 
 
@@ -41,6 +43,7 @@ namespace WebATM.Models
         /// </summary>
         [Required]
         [StringLength(32)]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Alleen characters zijn toegestaan")]
         public string Achternaam { get; set; }
 
 
@@ -49,7 +52,8 @@ namespace WebATM.Models
         /// </summary>
         [Required]
         [StringLength(32)]
-        [Display(Name = "Telefoonnummer #")]
+        [RegularExpression(@"\d{1,15}", ErrorMessage = "Telefoonnummer moet tussen 1 en 15 cijfers bevatten.")]
+        [Display(Name = "Telefoonnummer: ")]
         public string TelefoonNummer { get; set; }
 
 
@@ -70,6 +74,16 @@ namespace WebATM.Models
         /// in en uitgaven balans
         /// </summary>
         [DataType(DataType.Currency)]
+        //[RegularExpression("",ErrorMessage = "Kan alleen valuta bevatten")]
         public decimal Balans { get; set; }
+
+        /// <summary>
+        /// Hele gebruiker
+        /// </summary>
+        public virtual  ApplicationUser User { get; set; }
+        /// <summary>
+        /// key voor gebruikers
+        /// </summary>
+        public string ApplicationUserId { get; set; }
     }
 }

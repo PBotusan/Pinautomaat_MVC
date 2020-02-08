@@ -65,6 +65,15 @@ namespace WebATM.Models
     public class RegisterViewModel
     {
         [Required]
+        public string Voornaam { get; set; }
+
+        [Required]
+        public string Achternaam { get; set; }
+
+        [Required]
+        public string Telefoonnummer { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

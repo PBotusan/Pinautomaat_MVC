@@ -25,7 +25,7 @@ namespace WebATM.Controllers
             CheckingAccount checkingAccount = new CheckingAccount
             {
                 AccountNummer = "12345678910",
-                Naam = "Paul",
+                Voornaam = "Paul",
                 Achternaam = "Botusan",
                 TelefoonNummer = "0909601232",
                 Balans = 500
