@@ -7,6 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/bootstrap")
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -32,11 +33,16 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-      
-        </div>
+>        </div>
     </nav>
 
     <div class="container body-content">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="~/Images/RabobankLogo.png" />
+            </div>
+        </div>
+
         @RenderBody()
         <hr />
         <footer>
