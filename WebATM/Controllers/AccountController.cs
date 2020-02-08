@@ -151,7 +151,10 @@ namespace WebATM.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Voornaam = model.Voornaam, Achternaam = model.Achternaam, TelefoonNummer = model.Telefoonnummer};
+                var db = new ApplicationDbContext();
+                var accountNumber = (db.CheckingAccounts.Count() ++1);
+
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Voornaam = model.Voornaam, Achternaam = model.Achternaam, TelefoonNummer = model.Telefoonnummer, AccountNummer = accountNumber};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

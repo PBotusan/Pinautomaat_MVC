@@ -11,6 +11,12 @@ namespace WebATM.Models
     public class ApplicationUser : IdentityUser
     {
         /// <summary>
+        /// AccountNummer van user-account
+        /// </summary>
+        [Required]
+        public int AccountNummer { get; set; }
+
+        /// <summary>
         /// Voornaam van user-account
         /// </summary>
         [Required]

@@ -103,3 +103,7 @@ C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.csproj.Co
 C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.dll
 C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.pdb
 C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migrations.InitialCreate.resources
+C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.csproj.GenerateResource.cache
+C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migrations.initial.resources
+C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migrations.accountnumber.resources
