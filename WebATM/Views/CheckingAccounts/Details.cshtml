@@ -1,0 +1,55 @@
+﻿@model WebATM.Models.CheckingAccount
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h4>Checking Account</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.AccountNummer)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AccountNummer)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Naam)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Naam)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Achternaam)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Achternaam)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TelefoonNummer)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TelefoonNummer)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Balans)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Balans)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+
