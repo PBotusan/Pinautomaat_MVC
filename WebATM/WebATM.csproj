@@ -171,6 +171,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\CheckingAccountsController.cs" />
+    <Compile Include="Controllers\TransactionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -190,7 +191,16 @@
     <Compile Include="Migrations\202002110906092_CleanedApplicationuser.designer.cs">
       <DependentUpon>202002110906092_CleanedApplicationuser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002110924255_CheckingAccountApplicationIdREquired.cs" />
+    <Compile Include="Migrations\202002110924255_CheckingAccountApplicationIdREquired.designer.cs">
+      <DependentUpon>202002110924255_CheckingAccountApplicationIdREquired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002110940264_TransactionsModelToevoegen.cs" />
+    <Compile Include="Migrations\202002110940264_TransactionsModelToevoegen.designer.cs">
+      <DependentUpon>202002110940264_TransactionsModelToevoegen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Transaction.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -381,6 +391,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Transactions\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -403,6 +414,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002110906092_CleanedApplicationuser.resx">
       <DependentUpon>202002110906092_CleanedApplicationuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002110924255_CheckingAccountApplicationIdREquired.resx">
+      <DependentUpon>202002110924255_CheckingAccountApplicationIdREquired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002110940264_TransactionsModelToevoegen.resx">
+      <DependentUpon>202002110940264_TransactionsModelToevoegen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

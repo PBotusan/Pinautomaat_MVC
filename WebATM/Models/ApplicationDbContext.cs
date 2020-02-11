@@ -23,8 +23,15 @@ namespace WebATM.Models
             return new ApplicationDbContext();
         }
 
+        /// <summary>
+        /// Db set om met database te linken
+        /// </summary>
         public DbSet<CheckingAccount> CheckingAccounts { get; set; }
-        //public DbSet<> MyProperty { get; set; }
+        /// <summary>
+        /// Db set om met database te linken
+        /// </summary>
+        public DbSet<Transaction> Transactions { get; set; }
+
 
     }
 }

@@ -84,6 +84,7 @@ namespace WebATM.Models
         /// <summary>
         /// key voor gebruikers
         /// </summary>
+        [Required]
         public string ApplicationUserId { get; set; }
     }
 }
