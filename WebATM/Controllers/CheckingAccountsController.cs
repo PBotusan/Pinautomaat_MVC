@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,8 +8,11 @@ using WebATM.Models;
 
 namespace WebATM.Controllers
 {
+    [Authorize]
     public class CheckingAccountsController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         // GET: UserAccounts
         public ActionResult Index()
         {
@@ -17,21 +21,32 @@ namespace WebATM.Controllers
 
         // GET: UserAccounts/Details/5
         /// <summary>
-        /// Static user ophalen als test en doorsturen naar details view
+        /// Huidige user uit database halen doorsturen naar details view
         /// </summary>
-        /// <returns></returns>
+        /// <returns> View met user</returns>
         public ActionResult Details()
-        {//todo checking vullen met tbdatabase
-            CheckingAccount checkingAccount = new CheckingAccount
-            {
-                AccountNummer = "12345678910",
-                Voornaam = "Paul",
-                Achternaam = "Botusan",
-                TelefoonNummer = "0909601232",
-                Balans = 500
-            };
-
+        {
+            var userId = User.Identity.GetUserId();
+            var checkingAccount = db.CheckingAccounts.Where(c => c.ApplicationUserId == userId).First();
             return View(checkingAccount);
+        }
+
+        /// <summary>
+        /// Custom details for admin, zoekt naar huidige checking account
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Details met checkingaccount</returns>
+        [Authorize(Roles = "Admin")]
+        public ActionResult DetailsForAdmin(int id)
+        {
+            var checkingAccount = db.CheckingAccounts.Find(id);
+            return View("Details", checkingAccount);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult List() 
+        {
+            return View(db.CheckingAccounts.ToList());        
         }
 
         // GET: UserAccounts/Create
