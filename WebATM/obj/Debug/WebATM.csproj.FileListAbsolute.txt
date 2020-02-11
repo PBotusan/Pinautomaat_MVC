@@ -107,3 +107,4 @@ C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migration
 C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.csproj.GenerateResource.cache
 C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migrations.initial.resources
 C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migrations.accountnumber.resources
+C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migrations.CleanedApplicationuser.resources

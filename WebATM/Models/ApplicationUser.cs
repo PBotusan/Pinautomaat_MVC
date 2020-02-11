@@ -10,32 +10,7 @@ namespace WebATM.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        /// <summary>
-        /// AccountNummer van user-account
-        /// </summary>
-        [Required]
-        public int AccountNummer { get; set; }
-
-        /// <summary>
-        /// Voornaam van user-account
-        /// </summary>
-        [Required]
-        public string Voornaam { get; set; }
-
-
-        /// <summary>
-        /// Achternaam van user-account
-        /// </summary>
-        [Required]
-        public string Achternaam { get; set; }
-
-
-        /// <summary>
-        /// TelefoonNummer van user-account
-        /// </summary>
-        [Required]
-        public string TelefoonNummer { get; set; }
-
+       
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -43,6 +18,5 @@ namespace WebATM.Models
             // Add custom user claims here
             return userIdentity;
         }
-
     }
 }

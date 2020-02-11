@@ -186,6 +186,10 @@
     <Compile Include="Migrations\202002081540275_accountnumber.designer.cs">
       <DependentUpon>202002081540275_accountnumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002110906092_CleanedApplicationuser.cs" />
+    <Compile Include="Migrations\202002110906092_CleanedApplicationuser.designer.cs">
+      <DependentUpon>202002110906092_CleanedApplicationuser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -396,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002081540275_accountnumber.resx">
       <DependentUpon>202002081540275_accountnumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002110906092_CleanedApplicationuser.resx">
+      <DependentUpon>202002110906092_CleanedApplicationuser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

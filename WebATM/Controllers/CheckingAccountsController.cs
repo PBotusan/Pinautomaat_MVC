@@ -21,7 +21,7 @@ namespace WebATM.Controllers
         /// </summary>
         /// <returns></returns>
         public ActionResult Details()
-        {
+        {//todo checking vullen met tbdatabase
             CheckingAccount checkingAccount = new CheckingAccount
             {
                 AccountNummer = "12345678910",

@@ -142,8 +142,13 @@ namespace WebATM.Controllers
             return View();
         }
 
-        //
         // POST: /Account/Register
+        /// <summary>
+        /// Toevoegen van entity user waarmee je kunt inloggen,
+        /// Checking user linken met huidig aangemaakte user.
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>Result ban registreren</returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -151,14 +156,28 @@ namespace WebATM.Controllers
         {
             if (ModelState.IsValid)
             {
-                var db = new ApplicationDbContext();
-                var accountNumber = (db.CheckingAccounts.Count() ++1);
-
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Voornaam = model.Voornaam, Achternaam = model.Achternaam, TelefoonNummer = model.Telefoonnummer, AccountNummer = accountNumber};
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email,};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                   
+                    ApplicationDbContext db = new ApplicationDbContext();
+                    string accountNumber = (123456 + db.CheckingAccounts.Count()).ToString().PadLeft(10, '0');
+
+                    CheckingAccount checkingAccount = new CheckingAccount
+                    {
+                        Voornaam = model.Voornaam,
+                        Achternaam = model.Achternaam,
+                        AccountNummer = accountNumber,
+                        Balans = 0,
+                        ApplicationUserId = user.Id,
+                        TelefoonNummer = model.Telefoonnummer,
+                    };
+                    db.CheckingAccounts.Add(checkingAccount);
+                    db.SaveChanges();
+
+
+                       
+
 
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
