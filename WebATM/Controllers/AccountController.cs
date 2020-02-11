@@ -160,6 +160,8 @@ namespace WebATM.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, model.Voornaam));
+
                     ApplicationDbContext db = new ApplicationDbContext();
                     string accountNumber = (123456 + db.CheckingAccounts.Count()).ToString().PadLeft(10, '0');
 
@@ -174,9 +176,6 @@ namespace WebATM.Controllers
                     };
                     db.CheckingAccounts.Add(checkingAccount);
                     db.SaveChanges();
-
-
-                       
 
 
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);

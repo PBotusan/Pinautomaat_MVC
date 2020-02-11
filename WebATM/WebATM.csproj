@@ -67,6 +67,7 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Extensions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
@@ -100,6 +101,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Selectors" />
+    <Reference Include="System.IdentityModel.Services" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -202,6 +206,10 @@
     <Compile Include="Migrations\202002111037538_Transactionscontrolleraangepast.cs" />
     <Compile Include="Migrations\202002111037538_Transactionscontrolleraangepast.designer.cs">
       <DependentUpon>202002111037538_Transactionscontrolleraangepast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002111145380_PincodeUsers.cs" />
+    <Compile Include="Migrations\202002111145380_PincodeUsers.designer.cs">
+      <DependentUpon>202002111145380_PincodeUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Transaction.cs" />
@@ -427,6 +435,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002111037538_Transactionscontrolleraangepast.resx">
       <DependentUpon>202002111037538_Transactionscontrolleraangepast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111145380_PincodeUsers.resx">
+      <DependentUpon>202002111145380_PincodeUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

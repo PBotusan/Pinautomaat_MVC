@@ -111,3 +111,5 @@ C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migration
 C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migrations.CheckingAccountApplicationIdREquired.resources
 C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migrations.TransactionsModelToevoegen.resources
 C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migrations.Transactionscontrolleraangepast.resources
+C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\bin\Microsoft.IdentityModel.Extensions.dll
+C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migrations.PincodeUsers.resources

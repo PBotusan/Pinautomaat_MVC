@@ -18,5 +18,9 @@ namespace WebATM.Models
             // Add custom user claims here
             return userIdentity;
         }
+        /// <summary>
+        /// pincode voor users
+        /// </summary>
+        public string Pin { get; set; }
     }
 }
