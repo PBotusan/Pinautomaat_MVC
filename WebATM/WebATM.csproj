@@ -199,6 +199,10 @@
     <Compile Include="Migrations\202002110940264_TransactionsModelToevoegen.designer.cs">
       <DependentUpon>202002110940264_TransactionsModelToevoegen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002111037538_Transactionscontrolleraangepast.cs" />
+    <Compile Include="Migrations\202002111037538_Transactionscontrolleraangepast.designer.cs">
+      <DependentUpon>202002111037538_Transactionscontrolleraangepast.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
@@ -388,10 +392,10 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\CheckingAccounts\Details.cshtml" />
     <Content Include="Views\CheckingAccounts\Create.cshtml" />
+    <Content Include="Views\Transactions\Deposit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Transactions\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -420,6 +424,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002110940264_TransactionsModelToevoegen.resx">
       <DependentUpon>202002110940264_TransactionsModelToevoegen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111037538_Transactionscontrolleraangepast.resx">
+      <DependentUpon>202002111037538_Transactionscontrolleraangepast.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

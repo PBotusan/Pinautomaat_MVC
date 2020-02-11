@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-   // Layout = "MyLayout.cshtml";
+    // Layout = "MyLayout.cshtml";
 }
 
 
@@ -14,11 +14,11 @@
     <div class="col-md-6 margin-top-20">
         <a href="#" class="btn btn-primary btn-lg btn-block"><span class="fa fa-print"></span> Print balans </a>
         <a href="#" class="btn btn-primary btn-lg btn-block"><span class="fa fa-arrow-up"></span> Spaarrekening </a>
-        <a href="#" class="btn btn-primary btn-lg btn-block"><span class="fa fa-arrow-up"></span> Geld storten </a>
+        <a href="@Url.Action("Deposit", "Transactions", new { checkingAccountId = ViewBag.CheckingAccountId })" class="btn btn-primary btn-lg btn-block"><span class="fa fa-arrow-up"></span> Geld storten </a>
     </div>
 </div>
 
-U gebruikt @Request.Browser.Browser.
+U gebruikt @Request.Browser.Browser
 
 @{ var lijstMetBedragen = new List<Decimal> { 100, 200, -40, 275.99m, 25.50m };
 }

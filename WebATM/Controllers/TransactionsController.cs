@@ -3,87 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebATM.Models;
 
 namespace WebATM.Controllers
 {
+    [Authorize]
     public class TransactionsController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         // GET: Transactions
-        public ActionResult Index()
+        public ActionResult Deposit(int checkingAccountId)
         {
             return View();
         }
 
-        // GET: Transactions/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Transactions/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Transactions/Create
+        // GET: Transactions
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Deposit(Transaction transaction)
         {
-            try
+            if (ModelState.IsValid) 
             {
-                // TODO: Add insert logic here
+                db.Transactions.Add(transaction);
+                db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Transactions/Edit/5
-        public ActionResult Edit(int id)
-        {
             return View();
-        }
-
-        // POST: Transactions/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Transactions/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Transactions/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

@@ -1,16 +1,28 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebATM.Models;
 
 namespace WebATM.Controllers
 {
     public class HomeController : Controller
     {
-        //[MyLoggingFilter]
+        private ApplicationDbContext db = new ApplicationDbContext();
+
+        
+        /// <summary>
+        /// Pakt de user dat is ingelogd, en zorgt er voor dat userid verbonden wordt met checkingaccounts
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
         public ActionResult Index()
         {
+            var userId = User.Identity.GetUserId();
+            var checkingAccountId = db.CheckingAccounts.Where(c => c.ApplicationUserId == userId).First().Id;
+            ViewBag.CheckingAccountId = checkingAccountId;
             return View();
         }
 

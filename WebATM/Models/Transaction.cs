@@ -23,12 +23,6 @@ namespace WebATM.Models
 
 
         /// <summary>
-        /// Hele gebruiker
-        /// </summary>
-        public virtual ApplicationUser User { get; set; }
-
-
-        /// <summary>
         /// Id van checking account linkt checking accout samen met transaction
         /// </summary>
         [Required]
