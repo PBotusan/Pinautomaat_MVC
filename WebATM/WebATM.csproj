@@ -409,6 +409,7 @@
     <Content Include="Views\CheckingAccounts\List.cshtml" />
     <Content Include="Views\Home\_ContactThanks.cshtml" />
     <Content Include="Views\CheckingAccounts\Statement.cshtml" />
+    <Content Include="Views\Transactions\Withdrawl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
