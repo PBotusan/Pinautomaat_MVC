@@ -82,11 +82,14 @@ namespace WebATM.Models
         /// </summary>
         public virtual  ApplicationUser User { get; set; }
         /// <summary>
-        /// key voor gebruikers
+        /// key voor gebruikers.
         /// </summary>
         [Required]
         public string ApplicationUserId { get; set; }
 
+        /// <summary>
+        /// lijst met transacies om je balans te vullen.
+        /// </summary>
         public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

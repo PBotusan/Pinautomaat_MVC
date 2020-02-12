@@ -27,9 +27,9 @@
         <tr>
             <!--todo fixen dat je ziet wat er in zit-->>
             <td colspan="2">
-                <span data-bind="previousPage" class="fa fa-arrow-left" style="cursor:pointer;"></span>
+                <span data-bind="previousPage, visible:currentPage() > 1" class="fa fa-arrow-left" style="cursor:pointer;"></span>
                 <span data-bind="text:currentPage"></span>
-                <span data-bind="nextPage" class="fa fa-arrow-right" style="cursor:pointer;"></span>
+                <span data-bind="nextPage, visible:currentPage() < lastPage" class="fa fa-arrow-right" style="cursor:pointer;"></span>
             </td>
         </tr>
     </tfoot>
@@ -54,6 +54,7 @@
                 ReferenceLoopHandling.Ignore }));
             self.pageSize = 5;
             self.currentPage = ko.observable(1);
+            self.lastPage = Math.ceil(self.transactions.length / self.pageSize);
             self.currentTransactions = ko.omputed(function (){
 
                 var startIndex = (self.currentPage() - 1) * self.pageSize;
