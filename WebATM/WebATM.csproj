@@ -407,6 +407,7 @@
     <Content Include="Views\Transactions\Deposit.cshtml" />
     <Content Include="Views\CheckingAccounts\List.cshtml" />
     <Content Include="Views\Home\_ContactThanks.cshtml" />
+    <Content Include="Views\CheckingAccounts\Statement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

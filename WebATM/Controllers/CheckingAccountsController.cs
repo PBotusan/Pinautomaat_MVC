@@ -49,6 +49,12 @@ namespace WebATM.Controllers
             return View(db.CheckingAccounts.ToList());        
         }
 
+        public ActionResult Statement(int id) 
+        {
+            var checkingAccount = db.CheckingAccounts.Find(id);
+            return View(checkingAccount.Transactions.ToList());
+        }
+
         // GET: UserAccounts/Create
         public ActionResult Create()
         {
