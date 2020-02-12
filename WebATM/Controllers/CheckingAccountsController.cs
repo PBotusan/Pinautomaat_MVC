@@ -8,7 +8,7 @@ using WebATM.Models;
 
 namespace WebATM.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class CheckingAccountsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -36,14 +36,14 @@ namespace WebATM.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Details met checkingaccount</returns>
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public ActionResult DetailsForAdmin(int id)
         {
             var checkingAccount = db.CheckingAccounts.Find(id);
             return View("Details", checkingAccount);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public ActionResult List() 
         {
             return View(db.CheckingAccounts.ToList());        

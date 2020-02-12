@@ -60,7 +60,7 @@ namespace WebATM.Controllers
            
             ViewBag.TheMessage = "Bedankt, we hebben uw bericht ontvangen";
 
-            return View();
+            return PartialView("_ContactThanks");
         }
 
         /// <summary>
