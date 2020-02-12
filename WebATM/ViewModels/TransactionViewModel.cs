@@ -30,5 +30,10 @@ namespace WebATM.ViewModels
         /// </summary>
         public virtual ICollection<CheckingAccount> CheckingAccounts { get; set; }
 
+        /// <summary>
+        /// lijst met Transactions om je balans te vullen.
+        /// </summary>
+        public virtual ICollection<Transaction> Transactions { get; set; }
+
     }
 }

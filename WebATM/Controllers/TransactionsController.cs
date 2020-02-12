@@ -78,5 +78,17 @@ namespace WebATM.Controllers
             }
             return View(model);
         }
+
+        // GET: UserAccounts/Details/5
+        /// <summary>
+        /// Huidige user uit database halen doorsturen naar details view
+        /// </summary>
+        /// <returns> View met user</returns>
+        public ActionResult Details(int id)
+        {
+
+            var gekozenTransaction = db.Transactions.Where(c => c.Id == id).First();
+            return View(gekozenTransaction);
+        }
     } 
 }

@@ -406,10 +406,12 @@
     <Content Include="Views\CheckingAccounts\Details.cshtml" />
     <Content Include="Views\CheckingAccounts\Create.cshtml" />
     <Content Include="Views\Transactions\Deposit.cshtml" />
-    <Content Include="Views\CheckingAccounts\List.cshtml" />
+    <Content Include="Views\CheckingAccounts\AdminList.cshtml" />
     <Content Include="Views\Home\_ContactThanks.cshtml" />
     <Content Include="Views\CheckingAccounts\Statement.cshtml" />
     <Content Include="Views\Transactions\Withdrawl.cshtml" />
+    <Content Include="Views\CheckingAccounts\BalansTransaction.cshtml" />
+    <Content Include="Views\Transactions\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

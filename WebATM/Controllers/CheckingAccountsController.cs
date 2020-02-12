@@ -44,14 +44,21 @@ namespace WebATM.Controllers
         }
 
         //[Authorize(Roles = "Admin")]
-        public ActionResult List() 
+        public ActionResult AdminList() 
         {
             return View(db.CheckingAccounts.ToList());        
         }
 
-        public ActionResult Statement(int id) 
+        /// <summary>
+        /// verander terug naar statement voor jquery !! Werktniet !!
+        /// BalansTransaction voor correct werkend
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult BalansTransaction(int CheckingAccountId) 
         {
-            var checkingAccount = db.CheckingAccounts.Find(id);
+            var checkingAccount = db.CheckingAccounts.Find(CheckingAccountId);
+
             return View(checkingAccount.Transactions.ToList());
         }
 
