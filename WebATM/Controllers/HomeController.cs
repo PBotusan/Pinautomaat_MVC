@@ -15,7 +15,8 @@ namespace WebATM.Controllers
 
         
         /// <summary>
-        /// Pakt de user dat is ingelogd, en zorgt er voor dat userid verbonden wordt met checkingaccounts
+        /// Pakt de user dat is ingelogd, en zorgt er voor dat 
+        /// verbonden wordt met checkingaccounts
         /// </summary>
         /// <returns></returns>
         [Authorize]
@@ -68,14 +69,19 @@ namespace WebATM.Controllers
         /// </summary>
         /// <param name="letterCase"></param>
         /// <returns> Redirect action met index</returns>
-        public ActionResult Serial(string letterCase)
+        public ActionResult Serial(int? checkingAccountId)
         {
-            //todo user uit database halen
-            var serial = "testnumber12345";
-            if (letterCase == "lower")
+            //todo user uit database halen.
+            var serial = db.CheckingAccounts.Where(n => n.Id == checkingAccountId).FirstOrDefault();
+            if (serial == null) 
             {
+                return Content("");
+            }
 
-                return Content(serial.ToLower());
+            var serialNumber = serial.AccountNummer;
+            if (serialNumber != null)
+            {
+                return Content(serialNumber);
             }
             return RedirectToAction("Index");
         }

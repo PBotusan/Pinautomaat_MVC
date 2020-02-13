@@ -78,9 +78,16 @@ namespace WebATM.Models
         public decimal Balans { get; set; }
 
         /// <summary>
+        /// Balans op je spaarrekening
+        /// </summary>
+        [DataType(DataType.Currency)]
+        //[RegularExpression("",ErrorMessage = "Kan alleen valuta bevatten")]
+        public decimal Spaarrekening { get; set; }
+
+        /// <summary>
         /// Hele gebruiker
         /// </summary>
-        public virtual  ApplicationUser User { get; set; }
+        public virtual ApplicationUser User { get; set; }
         /// <summary>
         /// key voor gebruikers.
         /// </summary>

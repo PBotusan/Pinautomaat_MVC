@@ -20,13 +20,13 @@
             <a class="navbar-brand" href="#"> <img src="~/Images/rabobankLogoKlein.png" class="img-fluid"/> </a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <button class="nav-link"> @Html.ActionLink("Home", "Index", "Home") </button>
+                    <a class="nav-link"> @Html.ActionLink("Home", "Index", "Home") </a>
                 </li>
                 <li class="nav-item active">
-                    <button class="nav-link"> @Html.ActionLink("About", "About", "Home") </button>
+                    <s class="nav-link"> @Html.ActionLink("About", "About", "Home") </s>
                 </li>
                 <li class="nav-item active">
-                    <button class="nav-link"> @Html.ActionLink("Contact", "Contact", "Home") </button>
+                    <a class="nav-link"> @Html.ActionLink("Contact", "Contact", "Home") </a>
                 </li>
                 @Html.Partial("_LoginPartial")
             </ul>
@@ -47,7 +47,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Rabobank pinautomaat - @Html.Action("Serial", "Home", new { letterCase = "lower" })</p>
+            <p>&copy; @DateTime.Now.Year - Rabobank pinautomaat - @Html.Action("Serial", "Home", new {checkingAccountId = ViewBag.CheckingAccountId})</p>
         </footer>
     </div>
 

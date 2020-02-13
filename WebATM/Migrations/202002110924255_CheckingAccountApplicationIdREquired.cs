@@ -7,7 +7,7 @@
     {
         public override void Up()
         {
-            DropForeignKey("dbo.Checking_Accounts", "ApplicationUserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Checking_Accounts", "Application", "dbo.AspNetUsers");
             DropIndex("dbo.Checking_Accounts", new[] { "ApplicationUserId" });
             AlterColumn("dbo.Checking_Accounts", "ApplicationUserId", c => c.String(nullable: false, maxLength: 128));
             CreateIndex("dbo.Checking_Accounts", "ApplicationUserId");

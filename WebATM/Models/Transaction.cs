@@ -27,5 +27,6 @@ namespace WebATM.Models
         /// </summary>
         [Required]
         public int CheckingAccountId { get; set; }
+
     }
 }
