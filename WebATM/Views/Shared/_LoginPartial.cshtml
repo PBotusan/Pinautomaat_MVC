@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
-@using System.Security.Claims 
+@using System.Security.Claims
 @if (Request.IsAuthenticated)
 {
     var identity = (ClaimsIdentity)User.Identity;
@@ -8,12 +8,11 @@
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
     @Html.AntiForgeryToken()
-
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-           <button class="nav-link"> @Html.ActionLink("Gegevens" + "", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" }) </button>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+            <button class="nav-link"> @Html.ActionLink("Gegevens" + "", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" }) </button>
         </li>
-        <li>
+        <li class="nav-item active">
             <button class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Uitloggen</button>
         </li>
     </ul>
@@ -21,12 +20,12 @@
 }
 else
 {
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-            <button class="nav-link"> @Html.ActionLink("Registreren", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" }) </button>
-        </li>
-        <li class="nav-item active">
-            <button class="nav-link"> @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" }) </button>
-        </li>
-    </ul>
+<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <li class="nav-item active">
+        <button class="nav-link"> @Html.ActionLink("Registreren", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" }) </button>
+    </li>
+    <li class="nav-item active">
+        <button class="nav-link"> @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" }) </button>
+    </li>
+</ul>
 }

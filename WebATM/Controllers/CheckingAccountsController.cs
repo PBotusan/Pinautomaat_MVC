@@ -8,7 +8,7 @@ using WebATM.Models;
 
 namespace WebATM.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class CheckingAccountsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

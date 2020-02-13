@@ -64,13 +64,17 @@ namespace WebATM.Controllers
             if (ModelState.IsValid)
             {
                 CheckingAccount checkingAccountSaldo = db.CheckingAccounts.Find(model.CheckingAccountId);
+                //bereken bedrag eerste model is het totaal bedrag, tweede model maakt hem 0, derde zorgt voor min bedrag.
+                model.Amount = model.Amount - model.Amount - model.Amount;
+
                 Transaction transaction = db.Transactions.Add(model);
                 if (transaction == null)
                 {
                     return HttpNotFound();
                 }
 
-                checkingAccountSaldo.Balans -= transaction.Amount;
+
+                checkingAccountSaldo.Balans += transaction.Amount;
                 db.Transactions.Add(transaction);
                 db.SaveChanges();
 
