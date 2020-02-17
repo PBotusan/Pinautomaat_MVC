@@ -35,35 +35,41 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AccountNummer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Voornaam)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Achternaam)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TelefoonNummer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Naam)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Balans)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ApplicationUserId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "DetailsForAdmin", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNummer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voornaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Achternaam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefoonNummer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Balans)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationUserId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "DetailsForAdmin", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
+
+<div>
+    @Html.ActionLink("Terug naar hoofdpagina", "Index", "Home")
+</div>
+

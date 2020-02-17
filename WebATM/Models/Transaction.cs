@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebATM.Models
 {
-    
+
     public class Transaction
     {
         /// <summary>
@@ -19,6 +19,7 @@ namespace WebATM.Models
         /// Hoeveelheid geld in transactie
         /// </summary>
         [Required]
+        [Display(Name = "Hoeveelheid:")]
         public decimal Amount { get; set; }
 
 

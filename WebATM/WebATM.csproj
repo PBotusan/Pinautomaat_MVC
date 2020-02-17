@@ -211,10 +211,6 @@
     <Compile Include="Migrations\202002111145380_PincodeUsers.designer.cs">
       <DependentUpon>202002111145380_PincodeUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002131157530_Spaarrekening.cs" />
-    <Compile Include="Migrations\202002131157530_Spaarrekening.designer.cs">
-      <DependentUpon>202002131157530_Spaarrekening.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
@@ -455,9 +451,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002111145380_PincodeUsers.resx">
       <DependentUpon>202002111145380_PincodeUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002131157530_Spaarrekening.resx">
-      <DependentUpon>202002131157530_Spaarrekening.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

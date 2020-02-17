@@ -113,4 +113,3 @@ C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.csproj.Ge
 C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.dll
 C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.pdb
-C:\Users\User\Documents\GitHub\Pinautomaat_MVC\WebATM\obj\Debug\WebATM.Migrations.Spaarrekening.resources

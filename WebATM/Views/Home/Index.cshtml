@@ -5,9 +5,9 @@
 
 
 
-<div class="row">
+<div class="row" >
     <div class="col-md-6 margin-top-20">
-        <a href="@Url.Action("Withdrawl", "Transactions",new { checkingAccountId = ViewBag.CheckingAccountId })" class="btn btn-primary btn-lg btn-block"><span class="fa fa-arrow-down"></span> Overboeken </a>
+        <a href="@Url.Action("Withdrawl", "Transactions",new { checkingAccountId = ViewBag.CheckingAccountId })" class="btn btn-primary  btn-lg btn-block"><span class="fa fa-arrow-down"></span> Overboeken </a>
         <a href="@Url.Action("Withdrawl", "Transactions", new { checkingAccountId = ViewBag.CheckingAccountId})" class="btn btn-primary btn-lg btn-block"><span class="fa fa-arrow-down"></span> Geld pinnen </a>
         <a href="@Url.Action("BalansTransaction", "CheckingAccounts", new { checkingAccountId = ViewBag.CheckingAccountId })" class="btn btn-primary btn-lg btn-block"><span class="fa fa-balance-scale"></span> Balans </a>
     </div>
@@ -16,35 +16,13 @@
         <a href="@Url.Action("Deposit", "Transactions", new { checkingAccountId = ViewBag.CheckingAccountId })" class="btn btn-primary btn-lg btn-block"><span class="fa fa-arrow-up"></span> Geld storten </a>
         <a href="@Url.Action("Details", "CheckingAccounts")" class="btn btn-primary btn-lg btn-block"><span class="fa fa-print"></span> Gegevens </a>
     </div>
+
 </div>
 
 @ViewBag.Pin
 
+
+
 U gebruikt @Request.Browser.Browser
 
-<!--foreach van alle bedragen in een bedragenlijst-->
-@*@{ var lijstMetBedragen = new List<Decimal> { 100, 200, -40, 275.99m, 25.50m };
-}
-
-<ul>
-
-@foreach (decimal bedrag in lijstMetBedragen)
-{
-    <li>
-        @formatAmount(bedrag)
-    </li>
-}
-</ul>
-
-@helper formatAmount(decimal hoeveelheid)
-{
-    // laat zien of mensen of ze in credit of debit staan.
-    var color = "green";
-    if (hoeveelheid < 0)
-    {
-        color = "red";
-    }
-    <span style="color:@color">@String.Format("{0:c}", hoeveelheid)</span>
-
-}*@
 

@@ -1,18 +1,16 @@
 ﻿@model WebATM.Models.Transaction
 
 @{
-    ViewBag.Title = "Deposit";
+    ViewBag.Title = "Storten";
 }
 
-<h2>Deposit</h2>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Transaction</h4>
+        <h4>Storten</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -25,15 +23,16 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Storten" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Terug naar hoofdpagina", "Index", "Home")
 </div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

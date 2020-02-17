@@ -26,13 +26,13 @@
                { @style = "color:red;" })
                 </td>
             }
-            else if(item.Amount > 0)
+            else if (item.Amount > 0)
             {
                 <td data-field="@Html.DisplayNameFor(model => model.Amount)"
                     data-sortable="true" style="color: limegreen">
                     @Html.DisplayFor(modelItem => item.Amount, new
                     { @style = "color:green;" })
-                 </td>
+                </td>
             }
 
             <td>
@@ -41,3 +41,8 @@
         </tr>
     }
 </table>
+
+<div>
+    @Html.ActionLink("Terug naar hoofdpagina", "Index", "Home")
+</div>
+
