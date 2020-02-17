@@ -19,6 +19,12 @@ namespace WebATM.Controllers
             return View();
         }
 
+        // GET: Transactions
+        public ActionResult DepositSpaarrekening(int checkingAccountId)
+        {
+            return View();
+        }
+
         /// <summary>
         /// Saldo toevoegen aan aan ingelogde user, toevoegen aan ingelogde user.
         /// </summary>
@@ -40,12 +46,37 @@ namespace WebATM.Controllers
                 db.Transactions.Add(transaction);
                 db.SaveChanges();
 
-
                 return RedirectToAction("Index", "Home");
             }
             return View(model);
         }
 
+        [HttpPost]
+        public ActionResult DepositSpaarrekening(Transaction model) 
+        {
+            if (ModelState.IsValid)
+            {
+                CheckingAccount checkingAccountSaldo = db.CheckingAccounts.Find(model.CheckingAccountId);
+                Transaction transaction = db.Transactions.Add(model);
+                if (transaction == null)
+                {
+                    return HttpNotFound();
+                }
+
+                if (checkingAccountSaldo.Balans > 0) 
+                {
+                    checkingAccountSaldo.Balans -= transaction.Amount;
+                    checkingAccountSaldo.Spaarrekening += transaction.Amount;
+
+                    db.Transactions.Add(transaction);
+                    db.SaveChanges();
+
+                }
+
+                return RedirectToAction("Index", "Home");
+            }
+            return View(model);
+        }
 
         // GET: Transactions
         public ActionResult Withdrawl(int checkingAccountId)

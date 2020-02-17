@@ -412,6 +412,7 @@
     <Content Include="Views\Transactions\Withdrawl.cshtml" />
     <Content Include="Views\CheckingAccounts\BalansTransaction.cshtml" />
     <Content Include="Views\Transactions\Details.cshtml" />
+    <Content Include="Views\Transactions\DepositSpaarrekening.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

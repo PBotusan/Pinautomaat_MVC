@@ -12,7 +12,7 @@
         <a href="@Url.Action("BalansTransaction", "CheckingAccounts", new { checkingAccountId = ViewBag.CheckingAccountId })" class="btn btn-primary btn-lg btn-block"><span class="fa fa-balance-scale"></span> Balans </a>
     </div>
     <div class="col-md-6 margin-top-20">
-        <a href="@Url.Action("Deposit", "Transactions", new { checkingAccountId = ViewBag.CheckingAccountId })" class="btn btn-primary btn-lg btn-block"><span class="fa fa-arrow-up"></span> Spaarrekening </a>
+        <a href="@Url.Action("DepositSpaarrekening", "Transactions", new { checkingAccountId = ViewBag.CheckingAccountId })" class="btn btn-primary btn-lg btn-block"><span class="fa fa-arrow-up"></span> Spaarrekening </a>
         <a href="@Url.Action("Deposit", "Transactions", new { checkingAccountId = ViewBag.CheckingAccountId })" class="btn btn-primary btn-lg btn-block"><span class="fa fa-arrow-up"></span> Geld storten </a>
         <a href="@Url.Action("Details", "CheckingAccounts")" class="btn btn-primary btn-lg btn-block"><span class="fa fa-print"></span> Gegevens </a>
     </div>
