@@ -1,15 +1,23 @@
 ﻿@model WebATM.Models.Transaction
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Transactie lijst";
 }
 
-<h2>Details</h2>
 
 <div>
-    <h4>Transaction</h4>
+    <h4>Transacties</h4>
     <hr />
     <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Hoeveelheid)
         </dt>
@@ -19,12 +27,30 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CheckingAccountId)
+            @Html.DisplayNameFor(model => model.Omschrijving)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CheckingAccountId)
+            @Html.DisplayFor(model => model.Omschrijving)
         </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plaats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plaats)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+
+        <a class="btn btn-warning" href="javascript:window.print()">Print</a>
 
     </dl>
 </div>
