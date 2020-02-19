@@ -22,14 +22,23 @@ namespace WebATM.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var userId = User.Identity.GetUserId();
-            var checkingAccountId = db.CheckingAccounts.Where(c => c.ApplicationUserId == userId).First().Id;
-            ViewBag.CheckingAccountId = checkingAccountId;
+            try
+            {
+                var userId = User.Identity.GetUserId();
+                var checkingAccountId = db.CheckingAccounts.Where(c => c.ApplicationUserId == userId).First().Id;
+                ViewBag.CheckingAccountId = checkingAccountId;
 
-            var manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var user = manager.FindById(userId);
-            ViewBag.Pin = user.Pin;
+                var manager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var user = manager.FindById(userId);
+                ViewBag.Pin = user.Pin;
 
+            }
+            catch (Exception e) 
+            {
+                //logger maken
+                Console.WriteLine(e);
+            }
+            
             return View();
         }
 

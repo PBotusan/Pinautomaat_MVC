@@ -211,8 +211,21 @@
     <Compile Include="Migrations\202002111145380_PincodeUsers.designer.cs">
       <DependentUpon>202002111145380_PincodeUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002181624518_transactionsUitbreiden.cs" />
+    <Compile Include="Migrations\202002181624518_transactionsUitbreiden.designer.cs">
+      <DependentUpon>202002181624518_transactionsUitbreiden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002190916152_transactionsUitbreiden2.cs" />
+    <Compile Include="Migrations\202002190916152_transactionsUitbreiden2.designer.cs">
+      <DependentUpon>202002190916152_transactionsUitbreiden2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002190955248_transactionsUitbreiden3.cs" />
+    <Compile Include="Migrations\202002190955248_transactionsUitbreiden3.designer.cs">
+      <DependentUpon>202002190955248_transactionsUitbreiden3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Transaction.cs" />
+    <Compile Include="StringArrays\OmschrijvingArray.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -452,6 +465,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002111145380_PincodeUsers.resx">
       <DependentUpon>202002111145380_PincodeUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002181624518_transactionsUitbreiden.resx">
+      <DependentUpon>202002181624518_transactionsUitbreiden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002190916152_transactionsUitbreiden2.resx">
+      <DependentUpon>202002190916152_transactionsUitbreiden2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002190955248_transactionsUitbreiden3.resx">
+      <DependentUpon>202002190955248_transactionsUitbreiden3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,35 +10,60 @@
 <table class="table table-striped table-bordered">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Amount)
+            @Html.DisplayNameFor(model => model.Hoeveelheid)
         </th>
-        <th></th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Omschrijving)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Plaats)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Datum)
+        </th>
+
+        <th>
+            Meer info
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            @if (item.Amount < -1)
-            {
-                <td data-field="@Html.DisplayNameFor(model => model.Amount)"
-                    data-sortable="true" style="color: red">
-                    @Html.DisplayFor(modelItem => item.Amount, new
-               { @style = "color:red;" })
-                </td>
-            }
-            else if (item.Amount > 0)
-            {
-                <td data-field="@Html.DisplayNameFor(model => model.Amount)"
-                    data-sortable="true" style="color: limegreen">
-                    @Html.DisplayFor(modelItem => item.Amount, new
-                    { @style = "color:green;" })
-                </td>
-            }
+<tr>
+    @if (item.Hoeveelheid < -1)
+    {
+        <td data-field="@Html.DisplayNameFor(model => model.Hoeveelheid)"
+            data-sortable="true" style="color: red">
+            @Html.DisplayFor(modelItem => item.Hoeveelheid, new
+       { @style = "color:red;" })
+        </td>
+    }
+    else if (item.Hoeveelheid > 0)
+    {
+        <td data-field="@Html.DisplayNameFor(model => model.Hoeveelheid)"
+            data-sortable="true" style="color: limegreen">
+            @Html.DisplayFor(modelItem => item.Hoeveelheid, new
+            { @style = "color:green;" })
+        </td>
+    }
 
-            <td>
-                @Html.ActionLink("Info", "Details", "Transactions", new { id = item.Id }, null)
-            </td>
-        </tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Omschrijving)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Plaats)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Datum)
+    </td>
+
+    <td>
+        @Html.ActionLink("Klik hier", "Details", "Transactions", new { id = item.Id }, null)
+    </td>
+</tr>
     }
 </table>
 

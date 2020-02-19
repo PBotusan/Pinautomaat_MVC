@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebATM.Models;
+using WebATM.StringArrays;
 using WebATM.ViewModels;
 
 namespace WebATM.Controllers
@@ -42,7 +43,13 @@ namespace WebATM.Controllers
                     return HttpNotFound();
                 }
 
-                checkingAccountSaldo.Balans += transaction.Amount;
+                OmschrijvingArray omschrijvingArray = new OmschrijvingArray();
+                omschrijvingArray.KiesRandom();
+                transaction.Plaats = omschrijvingArray.GekozenPlaats;
+                transaction.Omschrijving = omschrijvingArray.GekozenOmschrijving;
+                transaction.Datum = DateTime.Now;
+
+                checkingAccountSaldo.Balans += transaction.Hoeveelheid;
                 db.Transactions.Add(transaction);
                 db.SaveChanges();
 
@@ -56,8 +63,8 @@ namespace WebATM.Controllers
         {
             if (ModelState.IsValid)
             {
-                CheckingAccount checkingAccountSaldo = db.CheckingAccounts.Find(model.CheckingAccountId);
                 Transaction transaction = db.Transactions.Add(model);
+                CheckingAccount checkingAccountSaldo = db.CheckingAccounts.Find(model.CheckingAccountId);
                 if (transaction == null)
                 {
                     return HttpNotFound();
@@ -65,16 +72,22 @@ namespace WebATM.Controllers
 
                 if (checkingAccountSaldo.Balans > 0) 
                 {
-                    checkingAccountSaldo.Balans -= transaction.Amount;
-                    checkingAccountSaldo.Spaarrekening += transaction.Amount;
+                    checkingAccountSaldo.Balans -= transaction.Hoeveelheid;
 
+                    OmschrijvingArray omschrijvingArray = new OmschrijvingArray();
+                    omschrijvingArray.KiesRandom();
+                    transaction.Plaats = omschrijvingArray.GekozenPlaats;
+                    transaction.Omschrijving = omschrijvingArray.GekozenOmschrijving;
+                    transaction.Datum = DateTime.Now;
+
+                    checkingAccountSaldo.Spaarrekening += transaction.Hoeveelheid;
                     db.Transactions.Add(transaction);
                     db.SaveChanges();
-
                 }
 
                 return RedirectToAction("Index", "Home");
             }
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
             return View(model);
         }
 
@@ -96,7 +109,7 @@ namespace WebATM.Controllers
             {
                 CheckingAccount checkingAccountSaldo = db.CheckingAccounts.Find(model.CheckingAccountId);
                 //bereken bedrag eerste model is het totaal bedrag, tweede model maakt hem 0, derde zorgt voor min bedrag.
-                model.Amount = model.Amount - model.Amount - model.Amount;
+                model.Hoeveelheid = model.Hoeveelheid - model.Hoeveelheid - model.Hoeveelheid;
 
                 Transaction transaction = db.Transactions.Add(model);
                 if (transaction == null)
@@ -104,8 +117,13 @@ namespace WebATM.Controllers
                     return HttpNotFound();
                 }
 
+                OmschrijvingArray omschrijvingArray = new OmschrijvingArray();
+                omschrijvingArray.KiesRandom();
+                transaction.Plaats = omschrijvingArray.GekozenPlaats;
+                transaction.Omschrijving = omschrijvingArray.GekozenOmschrijving;
+                transaction.Datum = DateTime.Now;
 
-                checkingAccountSaldo.Balans += transaction.Amount;
+                checkingAccountSaldo.Balans += transaction.Hoeveelheid;
                 db.Transactions.Add(transaction);
                 db.SaveChanges();
 
