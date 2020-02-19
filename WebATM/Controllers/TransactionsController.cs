@@ -139,9 +139,14 @@ namespace WebATM.Controllers
         /// <returns> View met user</returns>
         public ActionResult Details(int id)
         {
-
             var gekozenTransaction = db.Transactions.Where(c => c.Id == id).First();
             return View(gekozenTransaction);
+        }
+
+        public PartialViewResult _ShowSaldo(int checkingAccountId) 
+        {
+            var gekozenTransaction = db.CheckingAccounts.Where(c => c.Id == checkingAccountId).First();
+            return PartialView(gekozenTransaction);
         }
     } 
 }

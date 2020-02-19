@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using WebATM.Models;
 
 namespace WebATM.ViewModels
 {
-
     public class TransactionViewModel
     {
+        /// <summary>
+        /// primary key
+        /// </summary>
+        public int Id { get; set; }
+
+
         /// <summary>
         /// Hoeveelheid geld in transactie
         /// </summary>
         [Required]
-        public decimal Amount { get; set; }
+        public decimal Hoeveelheid { get; set; }
 
 
         /// <summary>
@@ -23,7 +25,10 @@ namespace WebATM.ViewModels
         [Required]
         public int CheckingAccountId { get; set; }
 
-
+        /// <summary>
+        /// checking account van user
+        /// </summary>
+        public CheckingAccount CheckingAccount { get; set; }
 
         /// <summary>
         /// lijst met CheckingAccounts om je balans te vullen.
