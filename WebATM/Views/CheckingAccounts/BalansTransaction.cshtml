@@ -32,40 +32,43 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    @if (item.Hoeveelheid < -1)
-    {
-        <td data-field="@Html.DisplayNameFor(model => model.Hoeveelheid)"
-            data-sortable="true" style="color: red">
-            @Html.DisplayFor(modelItem => item.Hoeveelheid, new
-       { @style = "color:red;" })
-        </td>
-    }
-    else if (item.Hoeveelheid > 0)
-    {
-        <td data-field="@Html.DisplayNameFor(model => model.Hoeveelheid)"
-            data-sortable="true" style="color: limegreen">
-            @Html.DisplayFor(modelItem => item.Hoeveelheid, new
-            { @style = "color:green;" })
-        </td>
-    }
+        <tr>
+            @if (item.Hoeveelheid < -1)
+            {
+                <td data-field="@Html.DisplayNameFor(model => model.Hoeveelheid)"
+                    data-sortable="true" style="color: red">
+                    @Html.DisplayFor(modelItem => item.Hoeveelheid, new
+               { @style = "color:red;" })
+                </td>
+            }
+            else if (item.Hoeveelheid > 0)
+            {
+                <td data-field="@Html.DisplayNameFor(model => model.Hoeveelheid)"
+                    data-sortable="true" style="color: limegreen">
+                    @Html.DisplayFor(modelItem => item.Hoeveelheid, new
+                    { @style = "color:green;" })
+                </td>
+            }
 
-    <td>
-        @Html.DisplayFor(modelItem => item.Omschrijving)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Plaats)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Datum)
-    </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Omschrijving)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plaats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datum)
+            </td>
 
-    <td>
-        @Html.ActionLink("Klik hier", "Details", "Transactions", new { id = item.Id }, null)
-    </td>
-</tr>
+            <td>
+                @Html.ActionLink("Klik hier", "Details", "Transactions", new { id = item.Id }, null)
+            </td>
+
+        </tr>
     }
 </table>
+
+<a class="btn btn-primary" href="javascript:window.print()">Print</a>
 
 <div>
     @Html.ActionLink("Terug naar hoofdpagina", "Index", "Home")
