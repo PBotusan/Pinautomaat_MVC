@@ -77,7 +77,7 @@ namespace WebATM.Controllers
                     OmschrijvingArray omschrijvingArray = new OmschrijvingArray();
                     omschrijvingArray.KiesRandom();
                     transaction.Plaats = omschrijvingArray.GekozenPlaats;
-                    transaction.Omschrijving = omschrijvingArray.GekozenOmschrijving;
+                    transaction.Omschrijving = "Eigen rekening naar Spaarrekening";
                     transaction.Datum = DateTime.Now;
 
                     checkingAccountSaldo.Spaarrekening += transaction.Hoeveelheid;
